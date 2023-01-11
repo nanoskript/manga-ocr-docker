@@ -1,0 +1,15 @@
+[project]
+requires-python = ">=3.10"
+dependencies = [
+    "torch==1.13.1+cpu",
+    "manga-ocr>=0.1.8",
+    "fastapi>=0.89.1",
+    "pillow>=9.4.0",
+    "uvicorn[standard]>=0.20.0",
+    "python-multipart>=0.0.5",
+]
+
+[[tool.pdm.source]]
+type = "find_links"
+url = "https://download.pytorch.org/whl/cpu/torch_stable.html"
+name = "torch"
