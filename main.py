@@ -1,11 +1,13 @@
 import io
 
 from fastapi import FastAPI, File
+from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 from manga_ocr import MangaOcr
 from PIL import Image
 
 app = FastAPI(title="manga-ocr-docker")
+app.add_middleware(CORSMiddleware, allow_origins=["*"])
 mocr = MangaOcr()
 
 
