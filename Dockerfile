@@ -11,7 +11,5 @@ RUN pdm sync && pdm cache clear
 RUN pdm run python3 -c "from manga_ocr import MangaOcr; MangaOcr()"
 
 ADD ./main.py ./
+CMD pdm run uvicorn --host 0.0.0.0 --port $PORT main:app
 
-CMD ["pdm", "run", "uvicorn", \
-	"--host", "0.0.0.0", "--port", "$PORT", \
-	"main:app"]
