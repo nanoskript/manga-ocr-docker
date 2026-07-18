@@ -1,4 +1,5 @@
-FROM python:3.10-slim-buster
+# Bumped from buster (EOL, apt repos archived); Python deps stay pinned by pdm.lock.
+FROM python:3.10-slim-bookworm
 
 RUN apt-get update
 RUN apt-get install -y mecab
